@@ -71,14 +71,14 @@ Node *CreateList(void)
 
 Node* FlattenList(Node  *head)
 {
-       printf("function called for %s\n",(*head)->key);
+       printf("function called for %s\n",head->key);
 //     printf("%s\n",__FUNCTION__);
      Node *p;     
-     for(p = *head; p; p = p->next)
+     for(p = head; p; p = p->next)
      {
           if(p->child)
           {
-               Node *tail = FlattenList(&(p->child));
+               Node *tail = FlattenList(p->child);
                tail->next = p->next;
                p->next = p->child;
                p->child = NULL;
@@ -92,7 +92,7 @@ Node* FlattenList(Node  *head)
 int main()
 {
      Node *head = CreateList();
-     FlattenList(&head);
+     FlattenList(head);
      PrintList(head);
      return 0;
 }

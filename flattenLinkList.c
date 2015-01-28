@@ -69,7 +69,7 @@ Node *CreateList(void)
      return head1;
 }
 
-Node* FlattenList(Node  **head)
+Node* FlattenList(Node  *head)
 {
        printf("function called for %s\n",(*head)->key);
 //     printf("%s\n",__FUNCTION__);
